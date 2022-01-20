@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:31:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/20 10:46:34 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:48:49 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char *argv[])
 {
-	int min = -400, max = 400, voulu = 0, i = 0, nbr = 0;
+	int min = -300, max = 300, voulu = 0, i = 0, nbr = 0;
 
 	srand((long int) time(0) + getpid());
 	if (argc != 2)
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (i < voulu - 1)
 	{
-		printf("%d ", tab[i]);
+		printf("%d\n", tab[i]);
 		i++;
 	}
 	printf("%d\n", tab[i]);
