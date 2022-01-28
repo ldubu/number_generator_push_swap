@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:31:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/20 11:48:49 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:17:55 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 int main(int argc, char *argv[])
 {
-	int min = -300, max = 300, voulu = 0, i = 0, nbr = 0;
+	int min, max, voulu = 0, i = 0, nbr = 0;
 
 	srand((long int) time(0) + getpid());
-	if (argc != 2)
+	if (argc != 4)
 	{
 		printf("Veuillez entrer les parametres ainsi\n");
-		printf("./generate nbr_voulu");
+		printf("./generate nbr_voulu min max");
 		exit(0);
 	}
 	voulu = ft_atoi(argv[1]);
+	min = ft_atoi(argv[2]);
+	max = ft_atoi(argv[3]);
 	int tab[voulu];
 	while (i < voulu)
 	{
@@ -38,10 +40,10 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (i < voulu - 1)
 	{
-		printf("%d\n", tab[i]);
+		printf("%d ", tab[i]);
 		i++;
 	}
-	printf("%d\n", tab[i]);
+	printf("%d ", tab[i]);
 	return(0);
 }
 
