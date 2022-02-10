@@ -23,3 +23,10 @@ Si votre programme est KO par le checker ou qu'il depsse le nombre maximum d'ins
 A la fin, il affiche un resume de vos performance et calcule une note approximative qui se base sur votre pire nombre d'instruction.
 
 ![alt text](https://github.com/ldubu/push_swap_testeur/blob/main/Screenshot/Screenshot%20from%202022-02-10%2014-27-17.png)  
+
+## Generateur de nombre aleatoire
+```Shell
+cd number_generator
+make
+./gen
+```
