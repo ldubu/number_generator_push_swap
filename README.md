@@ -11,7 +11,10 @@ Puis rentrez dans le dossier du testeur et lancez le script
 cd push_swap_testeur
 ./test.sh
 ```
-## Retour 
+## Retour
+
+Le testeur commence par faire des tests de parsing. S'il KO a ce moment, le programme s'arrete.
+
 Pour chaque categorie le programme effectue un certain nombre de test avec un generateur de nombre aleatoire.
 
 Pour chaque test, il affiche s'il a passe le checker et combien d'instruction votre push_swap a utilise.
