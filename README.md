@@ -28,5 +28,5 @@ A la fin, il affiche un resume de vos performance et calcule une note approximat
 ```Shell
 cd number_generator
 make
-./gen
+./generator [taille de la liste] [minimum] [maximum]
 ```
