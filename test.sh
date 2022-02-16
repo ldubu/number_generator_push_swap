@@ -17,6 +17,92 @@ pire5=0
 pire100=0
 pire500=0
 
+echo -e "\n                   \033[1;34mTEST PARSING\033[0;0m\n"
+retour=$(./push_swap 0 -1 2 a)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest a:			\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest a:			\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 22a)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest 22a:		\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest 22a:		\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 25+)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest 25+:		\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest 25+:		\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 25-)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest 25-:		\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest 25-:		\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 +)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest +:			\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest +:			\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 -)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest -:			\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest -:			\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 0)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest doublon:		\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest doublon:		\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 2147483648)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest >INT_MAX:		\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest >INT_MAX:		\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+retour=$(./push_swap 0 -1 2 -2147483649)
+if [ $retour = "Error" ]; then
+	echo -e "\033[1;34mTest <INT_MIN:		\033[1;32m"OK"\033[0;0m"
+else
+	echo -e "\033[1;34mTest <INT_MIN:		\033[1;31m"KO"\033[0;0m";
+	exit 
+fi
+
+retour=$(./push_swap)
+if [ $retour ]; then
+	echo -e "\033[1;34mTest no arg:		\033[1;31m"KO"\033[0;0m";
+	exit 
+else
+	echo -e "\033[1;34mTest no arg:		\033[1;32m"OK"\033[0;0m"
+fi
+retour=$(./push_swap 1 2 3)
+if [ $retour ]; then
+	echo -e "\033[1;34mTest 1 2 3:		\033[1;31m"KO"\033[0;0m";
+	exit 
+else
+	echo -e "\033[1;34mTest 1 2 3:		\033[1;32m"OK"\033[0;0m"
+fi
+retour=$(./push_swap 0 1 2 3 4 5 6 7 8 9)
+if [ $retour ]; then
+	echo -e "\033[1;34mTest 0 1 2 3 4 5 6 7 8 9: \033[1;31m"KO"\033[0;0m";
+	exit 
+else
+	echo -e "\033[1;34mTest 0 1 2 3 4 5 6 7 8 9: \033[1;32m"OK"\033[0;0m"
+fi
 
 echo -e "\n                   \033[1;34mTEST   3 NOMBRES\033[0;0m\n"
 while [ $i -le 25 ]
@@ -26,7 +112,7 @@ do
 	coup=$(./push_swap $arg | wc -l)
 	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m" $arg $(./push_swap $arg))
-	elif [ $retour = "Error" ]; then
+	elif [ $retour = "Error\n" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m")
 	else
 		ok=$(echo -e "	\033[1;32m"$retour"\033[0;0m")
@@ -53,7 +139,7 @@ do
 	coup=$(./push_swap $arg | wc -l)
 	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m" $arg $(./push_swap $arg))
-	elif [ $retour = "Error" ]; then
+	elif [ $retour = "Error\n" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m")
 	else
 		ok=$(echo -e "	\033[1;32m"$retour"\033[0;0m")
@@ -80,7 +166,7 @@ do
 	coup=$(./push_swap $arg | wc -l)
 	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m" $arg $(./push_swap $arg))
-	elif [ $retour = "Error" ]; then
+	elif [ $retour = "Error\n" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m")
 	else
 		ok=$(echo -e "	\033[1;32m"$retour"\033[0;0m")
