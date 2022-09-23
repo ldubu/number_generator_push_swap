@@ -3,7 +3,7 @@
 make -f Makefile -C number_generator/
 make -f Makefile -C ../push_swap_42
 mv number_generator/generator ./
-mv ../push_swap_42/push_swap ./
+mv ../push_swap ./
 mv ../libft.a ./
 chmod 777 generator
 chmod 777 push_swap
